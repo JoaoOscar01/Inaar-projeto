@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio do Cliente</title>
+    <link rel="stylesheet" href="/static/cardapio_user.css">
+</head>
+<body>
+    <h1>Cardápio de Comidas - Cliente</h1>
+
+    <ul>
+        {% for comida in comidas %}
+            <li>
+                <strong>{{ comida.nome_produto }}</strong><br>
+                Descrição: {{ comida.descricao_produto }}<br>
+                Preço: R$ {{ comida.preco_produto }}<br>
+                
+                {% if comida.disponivel %}
+                    <span style="color: green; font-weight: bold;">Disponível</span>
+                {% else %}
+                    <span style="color: red; font-weight: bold;">Indisponível</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

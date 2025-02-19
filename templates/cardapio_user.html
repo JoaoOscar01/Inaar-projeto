@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio</title>
+    <link rel="stylesheet" href="/static/cardapio_user.css"
+</head>
+<body>
+    <h1>Cardápio de Comidas - Admin</h1>
+
+    <ul>
+        {% for comida in comidas %}
+            <li>
+                <strong>{{ comida.nome_produto }}</strong><br>
+                Descrição: {{ comida.descricao_produto }}<br>
+                Preço: R$ {{ comida.preco_produto }}<br>
+                
+                {% if comida.disponivel %}
+                    <span style="color: green; font-weight: bold;">Disponível</span>
+                {% else %}
+                    <span style="color: red; font-weight: bold;">Indisponível</span>
+                {% endif %}
+                
+                <form action="/alterar_status/{{ comida.id }}" method="post" style="display:inline;">
+                    <button type="submit">Marcar como {% if comida.disponivel %} Indisponível {% else %} Disponível {% endif %}</button>
+                </form>
+
+                <form action="/excluir/{{ comida.id }}" method="post" style="display:inline;">
+                    <button type="submit" style="background-color: red; color: white;">Excluir</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
