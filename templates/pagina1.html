@@ -1,11 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Restaurante Inaar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f8f1e5;
+        }
+        .header {
+            background-color: #8b0000;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #a52a2a;
+            padding: 10px;
+        }
+        .navbar button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            margin: 0 15px;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .navbar button:hover {
+            background-color: #d2691e;
+            border-radius: 5px;
+        }
+        .section {
+            padding: 50px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Inicio</h1>
+    <div class="header">
+        <h1>INAAR</h1>
+    </div>
+    <div class="navbar">
+        <button onclick="scrollToSection('sobre-nos')">Sobre Nós</button>
+        <button onclick="scrollToSection('contato')">Contato</button>
+        <button onclick="scrollToSection('cardapio')">Cardápio</button>
+    </div>
+    <div id="sobre-nos" class="section">
+        <h2>Sobre Nós</h2>
+        <p>Bem-vindo ao  Inaar! Oferecemos o melhor da culinária árabe.</p>
+    </div>
+    <div id="contato" class="section">
+        <h2>Contato</h2>
+        <p>Telefone: (11) 99999-9999 | Email: contato@inaar.com</p>
+    </div>
+    <div id="cardapio" class="section">
+        <h2>Cardápio</h2>
+        <p>Confira nossas deliciosas opções: kibes, esfihas, kebabs e manakshies</p>
+    </div>
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
+
