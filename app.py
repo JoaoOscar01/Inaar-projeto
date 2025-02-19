@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 # Criação da aplicação Flask
 app = Flask(__name__)
 
-# Configuração do banco de dados
+# Configuração do banco de dados João
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:castelo12@localhost/db_inaar'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
@@ -23,11 +23,10 @@ class Comidas(db.Model):
 def home():
     return render_template("pagina1.html")
 
-# Rota de Cadastro de Comida
 @app.route("/cadastrar", methods=["GET", "POST"])
 def cadastro_comida():
     if request.method == 'POST':
-        # Captura os dados do formulário
+
         nome = request.form['nome_comida']
         descricao = request.form['descricao']
         preco = float(request.form['valor_comida'])
