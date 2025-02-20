@@ -4,6 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 # Criação da aplicação Flask
 app = Flask(__name__)
 
+app.secret_key = 'secreta'  # Necessário para sessões
+
 # Configuração do banco de dados
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:castelo12@localhost/db_inaar'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
