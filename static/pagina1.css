@@ -7,11 +7,20 @@ body {
     background-color: #f8f1e5;
 }
 .header {
-    background-color: #8b0000;
-    color: white;
-    padding: 20px;
-    font-size: 24px;
+    background-image: url('/static/img/INAAR . DIGITAL BRANDING GUIDELINES texto 2 (2)-01.png'); /* Imagem de fundo */
+    background-size: cover;  /* Para cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    color: white; /* Cor do texto */
+    padding: 100px 0; /* Ajuste o espaço para o texto */
+    font-size: 48px; /* Tamanho da fonte do título */
+    text-align: center; /* Centraliza o texto */
 }
+
+.header h1 {
+    font-size: 60px; /* Tamanho da fonte para o título "INAAR" */
+    font-weight: bold;
+}
+
 .navbar {
     display: flex;
     justify-content: center;
