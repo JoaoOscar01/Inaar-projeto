@@ -1,67 +1,38 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurante Inaar</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: #f8f1e5;
-        }
-        .header {
-            background-color: #8b0000;
-            color: white;
-            padding: 20px;
-            font-size: 24px;
-        }
-        .navbar {
-            display: flex;
-            justify-content: center;
-            background-color: #a52a2a;
-            padding: 10px;
-        }
-        .navbar button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 18px;
-            margin: 0 15px;
-            cursor: pointer;
-            padding: 10px;
-        }
-        .navbar button:hover {
-            background-color: #d2691e;
-            border-radius: 5px;
-        }
-        .section {
-            padding: 50px;
-        }
-    </style>
+    <link rel="stylesheet" href="/static/pagina1.css">
 </head>
 <body>
     <div class="header">
         <h1>INAAR</h1>
     </div>
     <div class="navbar">
-        <button onclick="scrollToSection('sobre-nos')">Sobre Nós</button>
-        <button onclick="scrollToSection('contato')">Contato</button>
-        <button onclick="window.location.href='/cardapio_cliente'">Cardápio</button>
+        <button onclick="window.location.href='/about'">Sobre Nós</button>
+        <button onclick="window.location.href='/contact'">Contato</button>
+        <button onclick="window.location.href='/cardapio_cliente.html'">Cardápio</button>
     </div>
-    <div id="sobre-nos" class="section">
-        <h2>Sobre Nós</h2>
-        <p>Bem-vindo ao  Inaar! Oferecemos o melhor da culinária árabe.</p>
-    </div>
-    <div id="contato" class="section">
-        <h2>Contato</h2>
-        <p>Telefone: (11) 99999-9999 | Email: contato@inaar.com</p>
-    </div>
-    <div id="cardapio" class="section">
-        <h2>Cardápio</h2>
-        <p>Confira nossas deliciosas opções: kibes, esfihas, kebabs e manakshies</p>
+    <div class="content">
+        <h2>Fotos dos Produtos e Locais</h2>
+        <div class="gallery">
+            <img src="c:\Users\Luan\OneDrive\Desktop\imagens inaar\Imagem do WhatsApp de 2025-02-19 à(s) 19.33.46_507b666f.jpg" alt="pagina 1">
+            <img src="c:\Users\Luan\OneDrive\Desktop\imagens inaar\Imagem do WhatsApp de 2025-02-19 à(s) 19.33.52_e547f26b.jpg" alt="pagina 1 ft2">
+           
+        </div>
+        <h2>Vídeos</h2>
+        <div class="videos">
+            <video controls>
+                <source src="path_to_video1.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <video controls>
+                <source src="path_to_video2.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+        </div>
     </div>
     <script>
         function scrollToSection(id) {
@@ -70,4 +41,5 @@
     </script>
 </body>
 </html>
+
 
