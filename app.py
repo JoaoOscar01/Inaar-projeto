@@ -7,6 +7,10 @@ app = Flask(__name__)
 # Configuração do banco de dados João
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:castelo12@localhost/db_inaar'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+# Configuração do banco de dados luan
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:12345@localhost/db_inaar'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # Definindo o modelo de Comidas no banco de dados
