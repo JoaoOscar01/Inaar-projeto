@@ -59,6 +59,20 @@ body {
     padding: 50px;
 }
 
+/* Adicionando estilo para a seção Nossa História */
+#nossa-historia {
+    display: none;
+    margin-top: 1000px; /* Ajusta a posição da seção para mais abaixo na página */
+}
+
+/* Classe para mostrar a seção Nossa História */
+.mostrar {
+    display: block;
+    animation: fadeIn 1s;
+}
+
+
+
 
 
 

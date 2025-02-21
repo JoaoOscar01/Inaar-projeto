@@ -61,3 +61,57 @@ section {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+/* Estilo para os ícones de contato */
+section p {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section p i {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+/* Estilo adicional para os links */
+section p a {
+    color: inherit;
+    text-decoration: none;
+}
+
+section p a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo adicional para o link do Instagram */
+section p a {
+    color: #d2691e;
+    text-decoration: none;
+}
+
+section p a:hover {
+    text-decoration: underline;
+}
+
+/* Galeria de Imagens */
+.image-gallery {
+    margin-top: 20px;
+}
+
+.image-gallery .images {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-gallery img {
+    width: 30%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

@@ -20,13 +20,47 @@
             <source src="path_to_video.mp4" type="video/mp4">
         </video>
     </div>
-    <section id="sobre-nos" class="hidden">
-        <!-- Conteúdo da seção Sobre Nós -->
-        <h2>Sobre Nós</h2>
+    <section id="nossa-historia" class="hidden">
+        <!-- Conteúdo da seção Nossa História -->
+        <h2>Nossa História</h2>
         <p>Descrição da empresa.</p>
     </section>
+    <script>
+        console.log("Script JavaScript carregado.");
+        document.addEventListener('DOMContentLoaded', (event) => {
+            console.log("DOM completamente carregado e analisado.");
+            var button = document.getElementById('btn-sobre');
+            if (button) {
+                console.log("Botão 'Sobre Nós' encontrado.");
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    console.log("Botão 'Sobre Nós' clicado.");
+                    var section = document.getElementById('nossa-historia');
+                    if (section) {
+                        console.log("Seção 'Nossa História' encontrada.");
+                        section.classList.remove('hidden');
+                        section.classList.add('show');
+                        section.scrollIntoView({ behavior: 'smooth' });
+                        console.log("Classe 'show' adicionada e rolagem feita.");
+                    } else {
+                        console.log("Seção 'Nossa História' não encontrada.");
+                    }
+                });
+            } else {
+                console.log("Botão 'Sobre Nós' não encontrado.");
+            }
+        });
+    </script>
 </body>
 </html>
+
+
+  
+
+
+
+
+
 
 
 
