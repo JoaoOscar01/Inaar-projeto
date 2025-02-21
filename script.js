@@ -1,11 +1,15 @@
-document.getElementById('btn-sobre').addEventListener('click', function() {
-    document.getElementById('sobre-nos').scrollIntoView({ behavior: 'smooth' });
+document.getElementById('btn-sobre').addEventListener('click', function(event) {
+    event.preventDefault();
+    var section = document.getElementById('sobre-nos');
+    section.classList.remove('hidden');
+    section.classList.add('show');
+    section.scrollIntoView({ behavior: 'smooth' });
 });
 
-document.getElementById('btn-contato').addEventListener('click', function() {
-    document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
-});
 
-document.getElementById('btn-cardapio').addEventListener('click', function() {
-    document.getElementById('cardapio').scrollIntoView({ behavior: 'smooth' });
-});
+
+
+
+
+
+

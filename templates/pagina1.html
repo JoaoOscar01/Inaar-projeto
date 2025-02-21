@@ -3,41 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurante Inaar</title>
+    <title>Restaurante INAAR</title>
     <link rel="stylesheet" href="/static/pagina1.css">
 </head>
 <body>
-    <div class="header">
-        <h1>INAAR</h1>
-    </div>
-    <div class="navbar">
-        <button onclick="window.location.href='/about'">Sobre Nós</button>
-        <button onclick="window.location.href='/contact'">Contato</button>
-        <button onclick="window.location.href='/cardapio_cliente'">Cardápio</button>
-    </div>
+    <header class="header">
+        <div class="symbol"></div>
+    </header>
+    <nav class="navbar">
+        <button id="btn-sobre">Sobre Nós</button>
+        <button onclick="window.location.href='/contact.html'">Contato</button>
+        <button onclick="window.location.href='/cardapio_cliente.html'">Cardápio</button>
+    </nav>
     <div class="content">
-        <h2>Fotos dos Produtos e Locais</h2>
-        <div class="gallery">
-            <img src="" alt="foto">
-        </div>
-        <h2>Vídeos</h2>
-        <div class="videos">
-            <video controls>
-                <source src="path_to_video1.mp4" type="video/mp4">
-                Seu navegador não suporta o elemento de vídeo.
-            </video>
-            <video controls>
-                <source src="path_to_video2.mp4" type="video/mp4">
-                Seu navegador não suporta o elemento de vídeo.
-            </video>
-        </div>
+        <video class="video-background" autoplay muted loop>
+            <source src="path_to_video.mp4" type="video/mp4">
+        </video>
     </div>
-    <script>
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+    <section id="sobre-nos" class="hidden">
+        <!-- Conteúdo da seção Sobre Nós -->
+        <h2>Sobre Nós</h2>
+        <p>Descrição da empresa.</p>
+    </section>
+    <script src="/static/script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

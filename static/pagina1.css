@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,27 +5,27 @@ body {
     text-align: center;
     background-color: #f8f1e5;
 }
+
 .header {
-    background-image: url('/static/img/INAAR . DIGITAL BRANDING GUIDELINES texto 2 (2)-01.png'); /* Imagem de fundo */
-    background-size: cover;  /* Para cobrir toda a área */
+    background-image: url('/static/img/INAAR . DIGITAL BRANDING GUIDELINES texto 2 (2)-01.png'); /* Imagem do símbolo */
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir o contêiner */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
     background-position: center; /* Centraliza a imagem */
     color: white; /* Cor do texto */
-    padding: 100px 0; /* Ajuste o espaço para o texto */
-    font-size: 48px; /* Tamanho da fonte do título */
+    padding: 0; /* Remove o espaço extra */
     text-align: center; /* Centraliza o texto */
-}
-
-.header h1 {
-    font-size: 60px; /* Tamanho da fonte para o título "INAAR" */
-    font-weight: bold;
+    position: relative; /* Adicionado para posicionamento */
+    height: 400px; /* Ajuste a altura do cabeçalho */
+    width: 100%;
 }
 
 .navbar {
     display: flex;
     justify-content: center;
-    background-color: #a52a2a;
+    background-color: #BC6F25;
     padding: 10px;
 }
+
 .navbar button {
     background: none;
     border: none;
@@ -36,10 +35,34 @@ body {
     cursor: pointer;
     padding: 10px;
 }
+
 .navbar button:hover {
     background-color: #d2691e;
     border-radius: 5px;
 }
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 .section {
     padding: 50px;
 }
+
+
+
+
+
+
+
+
