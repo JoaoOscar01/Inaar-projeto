@@ -5,25 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio do Cliente</title>
     <link rel="stylesheet" href="./static/cardapio_cliente.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Slabo+27px&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Cardápio de Comidas - Cliente</h1>
+    <h1>Cardápio</h1>
 
-    <ul>
-        {% for comida in comidas %}
-            <li>
-                <strong>{{ comida.nome_produto }}</strong><br>
-                Descrição: {{ comida.descricao_produto }}<br>
-                Preço: R$ {{ comida.preco_produto }}<br>
-                
-                {% if comida.disponivel %}
-                    <span style="color: green; font-weight: bold;">Disponível</span>
-                {% else %}
-                    <span style="color: red; font-weight: bold;">Indisponível</span>
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+    <div class="cardapio-container">
+        <ul>
+            {% for comida in comidas %}
+                <li class="cardapio-item">
+                    <div class="produto-info">
+                        <!-- Exibe a imagem da comida -->
+                        <img src="{{ url_for('static', filename='img/' + (comida.imagem_produto if comida.imagem_produto else 'default.png')) }}" alt="{{ comida.nome_produto }}" class="produto-img">
+                        <div class="detalhes-produto">
+                            <strong>{{ comida.nome_produto }}</strong>
+                            <p class="descricao">{{ comida.descricao_produto }}</p>
+                            <span class="preco">R$ {{ comida.preco_produto }}</span>
+                        </div>
+                    </div>
+                    <div class="status">
+                        {% if comida.disponivel %}
+                            <span class="disponivel">Disponível</span>
+                        {% else %}
+                            <span class="indisponivel">Indisponível</span>
+                        {% endif %}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    
 
 </body>
 </html>

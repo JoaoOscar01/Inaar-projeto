@@ -1,5 +1,8 @@
+import os
+from werkzeug.utils import secure_filename
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 # Criação da aplicação Flask
 app = Flask(__name__)
@@ -10,10 +13,18 @@ app.secret_key = 'secreta'  # Necessário para sessões
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:castelo12@localhost/db_inaar'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# Configuração do banco de dados luan
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:12345@localhost/db_inaar'
-#app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# Configuração do diretório de upload de imagens
+UPLOAD_FOLDER = 'static/img/'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+# Banco de dados
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
+# Função para verificar extensões de imagem
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # Definindo o modelo de Comidas no banco de dados
 class Comidas(db.Model):
@@ -22,6 +33,7 @@ class Comidas(db.Model):
     descricao_produto = db.Column(db.String(150), nullable=False)
     preco_produto = db.Column(db.Float, nullable=False)
     disponivel = db.Column(db.Boolean, default=True)
+    imagem_produto = db.Column(db.String(100), nullable=True)  # Nova coluna para armazenar o nome da imagem
 
 class Usuario(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -37,15 +49,30 @@ def home():
 def contato():
     return render_template ("contact.html")
 
+# Rota para cadastrar a comida com imagem
 @app.route("/cadastrar", methods=["GET", "POST"])
 def cadastro_comida():
     if request.method == 'POST':
         nome = request.form['nome_comida']
         descricao = request.form['descricao']
         preco = float(request.form['valor_comida'])
+        
+        # Verifica se a imagem foi enviada
+        if 'imagem' not in request.files:
+            return 'Nenhuma imagem foi enviada', 400
+        
+        imagem = request.files['imagem']
+        
+        # Verifica se o arquivo é permitido
+        if imagem and allowed_file(imagem.filename):
+            # Salva a imagem com um nome seguro
+            filename = secure_filename(imagem.filename)
+            imagem.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        else:
+            return 'Tipo de arquivo não permitido', 400
 
-        # Cria um novo objeto de comida
-        nova_comida = Comidas(nome_produto=nome, descricao_produto=descricao, preco_produto=preco)
+        # Cria um novo objeto de comida com a imagem
+        nova_comida = Comidas(nome_produto=nome, descricao_produto=descricao, preco_produto=preco, imagem_produto=filename)
 
         # Adiciona no banco de dados
         db.session.add(nova_comida)
