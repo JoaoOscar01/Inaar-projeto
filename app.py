@@ -33,6 +33,10 @@ class Usuario(db.Model):
 def home():
     return render_template("pagina1.html")
 
+@app.route('/contatos')
+def contato():
+    return render_template ("contact.html")
+
 @app.route("/cadastrar", methods=["GET", "POST"])
 def cadastro_comida():
     if request.method == 'POST':
