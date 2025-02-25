@@ -3,7 +3,8 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: #f8f1e5;
+    background-color: #000; /* Fundo preto */
+    color: #fff; /* Texto branco */
 }
 
 .header {
@@ -59,18 +60,42 @@ body {
     padding: 50px;
 }
 
-/* Adicionando estilo para a seção Nossa História */
-#nossa-historia {
-    display: none;
-    margin-top: 1000px; /* Ajusta a posição da seção para mais abaixo na página */
+/* Estilo dos títulos */
+h3 {
+    color: #FFA500; /* Títulos em laranja */
+    font-family: 'Georgia', serif; /* Fonte charmosa e inovadora */
 }
 
-/* Classe para mostrar a seção Nossa História */
-.mostrar {
-    display: block;
-    animation: fadeIn 1s;
+/* Estilo das seções de conteúdo */
+.content-section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #1c1c1c; /* Fundo escuro para contraste */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5); /* Sombra laranja para destacar */
 }
 
+/* Estilo das imagens */
+.content-section img {
+    width: 15%; /* Ajustei o tamanho das imagens para 15% */
+    height: auto;
+    border-radius: 8px;
+    margin: 10px;
+    vertical-align: top; /* Alinhar as imagens ao topo */
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+/* Efeito ao passar o mouse nas imagens */
+.content-section img:hover {
+    transform: scale(1.1); /* Efeito de zoom */
+}
+
+/* Par de imagens lado a lado */
+.img-pair {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
 
 
 

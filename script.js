@@ -7,23 +7,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
         button.addEventListener('click', function(event) {
             event.preventDefault();
             console.log("Botão 'Sobre Nós' clicado.");
-            var section = document.getElementById('nossa-historia');
+            var section = document.getElementById('sobre-nos');
             if (section) {
-                console.log("Seção 'Nossa História' encontrada.");
+                console.log("Seção 'Sobre Nós' encontrada.");
                 section.classList.remove('hidden');
                 section.classList.add('show');
                 section.scrollIntoView({ behavior: 'smooth' });
                 console.log("Classe 'show' adicionada e rolagem feita.");
             } else {
-                console.log("Seção 'Nossa História' não encontrada.");
+                console.log("Seção 'Sobre Nós' não encontrada.");
             }
         });
     } else {
         console.log("Botão 'Sobre Nós' não encontrado.");
     }
 });
-
-
 
 
 
