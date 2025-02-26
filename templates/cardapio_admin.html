@@ -3,35 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardápio</title>
-    <link rel="stylesheet" href="./static/cardapio_user.css"
+    <title>Cardápio - Admin</title>
+    <link rel="stylesheet" href="./static/cardapio_user.css">
 </head>
 <body>
     <h1>Cardápio de Comidas - Admin</h1>
 
-    <ul>
-        {% for comida in comidas %}
-            <li>
-                <strong>{{ comida.nome_produto }}</strong><br>
-                Descrição: {{ comida.descricao_produto }}<br>
-                Preço: R$ {{ comida.preco_produto }}<br>
-                
-                {% if comida.disponivel %}
-                    <span style="color: green; font-weight: bold;">Disponível</span>
-                {% else %}
-                    <span style="color: red; font-weight: bold;">Indisponível</span>
+    {% for categoria in ['Esfihas', 'Entradas', 'Bebidas', 'Kebab', 'Kibe', 'Pizza', 'Combos', 'Manakish', 'Sobremesas'] %}
+        <h2>{{ categoria }}</h2>
+        <ul>
+            {% for comida in comidas %}
+                {% if comida.categoria_produto == categoria %}
+                    <li>
+                        <div class="produto-info">
+                            <strong>{{ comida.nome_produto }}</strong><br>
+                            Descrição: {{ comida.descricao_produto }}<br>
+                            Preço: R$ {{ comida.valor_comida }}<br>
+    
+                            {% if comida.imagem_produto %}
+                                <a href="{{ comida.link_imagem }}" target="_blank">
+                                    <img src="{{ url_for('static', filename='img/' + comida.imagem_produto) }}" alt="{{ comida.nome_produto }}">
+                                </a>
+                            {% else %}
+                                <span>Imagem não disponível</span>
+                            {% endif %}
+    
+                            <div class="status {% if comida.disponivel %}available{% else %}unavailable{% endif %}">
+                                {% if comida.disponivel %}
+                                    Disponível
+                                {% else %}
+                                    Indisponível
+                                {% endif %}
+                            </div>
+    
+                            <div class="btn-container">
+                                <form action="/alterar_status/{{ comida.id }}" method="post">
+                                    <button type="submit">
+                                        Marcar como {% if comida.disponivel %} Indisponível {% else %} Disponível {% endif %}
+                                    </button>
+                                </form>
+    
+                                <form action="/excluir/{{ comida.id }}" method="post">
+                                    <button type="submit">Excluir</button>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
                 {% endif %}
-                
-                <form action="/alterar_status/{{ comida.id }}" method="post" style="display:inline;">
-                    <button type="submit">Marcar como {% if comida.disponivel %} Indisponível {% else %} Disponível {% endif %}</button>
-                </form>
-
-                <form action="/excluir/{{ comida.id }}" method="post" style="display:inline;">
-                    <button type="submit" style="background-color: red; color: white;">Excluir</button>
-                </form>
-            </li>
-        {% endfor %}
-    </ul>
+            {% endfor %}
+        </ul>
+    {% endfor %}
 
 </body>
 </html>

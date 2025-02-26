@@ -15,7 +15,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Configuração do diretório de upload de imagens
 UPLOAD_FOLDER = 'static/img/'
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'webp'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Banco de dados
@@ -33,7 +33,9 @@ class Comidas(db.Model):
     descricao_produto = db.Column(db.String(150), nullable=False)
     preco_produto = db.Column(db.Float, nullable=False)
     disponivel = db.Column(db.Boolean, default=True)
-    imagem_produto = db.Column(db.String(100), nullable=True)  # Nova coluna para armazenar o nome da imagem
+    imagem_produto = db.Column(db.String(100), nullable=True)  # Nome da imagem
+    link_imagem = db.Column(db.String(200), nullable=True)  # Link associado à imagem
+    categoria_produto = db.Column(db.String(50), nullable=False)  # Categoria da comida
 
 class Usuario(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -47,15 +49,17 @@ def home():
 
 @app.route('/contatos')
 def contato():
-    return render_template ("contact.html")
+    return render_template("contact.html")
 
-# Rota para cadastrar a comida com imagem
+# Rota para cadastrar a comida com imagem e link
 @app.route("/cadastrar", methods=["GET", "POST"])
 def cadastro_comida():
     if request.method == 'POST':
         nome = request.form['nome_comida']
         descricao = request.form['descricao']
         preco = float(request.form['valor_comida'])
+        link_imagem = request.form['link_imagem']  # Pega o link da imagem
+        categoria = request.form['categoria_produto']  # Pega a categoria da comida
         
         # Verifica se a imagem foi enviada
         if 'imagem' not in request.files:
@@ -71,14 +75,21 @@ def cadastro_comida():
         else:
             return 'Tipo de arquivo não permitido', 400
 
-        # Cria um novo objeto de comida com a imagem
-        nova_comida = Comidas(nome_produto=nome, descricao_produto=descricao, preco_produto=preco, imagem_produto=filename)
+        # Cria um novo objeto de comida com a imagem e o link
+        nova_comida = Comidas(
+            nome_produto=nome,
+            descricao_produto=descricao,
+            preco_produto=preco,
+            imagem_produto=filename,
+            link_imagem=link_imagem,  # Armazena o link da imagem
+            categoria_produto=categoria  # Armazena a categoria
+        )
 
         # Adiciona no banco de dados
         db.session.add(nova_comida)
         db.session.commit()
 
-        # Redireciona para o cardápio de comidas
+        # Redireciona para o cardápio de admin
         return redirect(url_for('cardapio_admin'))
 
     return render_template("cadastrar_comida.html")
@@ -112,7 +123,7 @@ def excluir_comida(id):
 @app.route("/cardapio_cliente")
 def cardapio_cliente():
     comidas = Comidas.query.all()
-    return render_template("/cardapio_cliente.html", comidas=comidas)
+    return render_template("cardapio_cliente.html", comidas=comidas)
 
 # Rota de login
 @app.route("/login", methods=["GET", "POST"])

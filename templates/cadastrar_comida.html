@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/static/cadastrar_comida.css">
 <form action="/cadastrar" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="nome_comida">Nome Da Comida:</label>
@@ -17,6 +18,26 @@
     <div class="form-group">
         <label for="imagem">Imagem:</label>
         <input type="file" id="imagem" name="imagem" accept="image/*" required>
+    </div>
+
+    <div class="form-group">
+        <label for="link_imagem">Link para a Imagem:</label>
+        <input type="url" id="link_imagem" name="link_imagem" placeholder="Ex: https://www.exemplo.com" required>
+    </div>
+
+    <div class="form-group">
+        <label for="categoria_produto">Categoria:</label>
+        <select id="categoria_produto" name="categoria_produto" required>
+            <option value="Esfihas">Esfihas</option>
+            <option value="Entradas">Entradas</option>
+            <option value="Bebidas">Bebidas</option>
+            <option value="Kebab">Kebab</option>
+            <option value="Kibe">Kibe</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Combos">Combos</option>
+            <option value="Manakish">Manakish</option>
+            <option value="Sobremesas">Sobremesas</option>
+        </select>
     </div>
 
     <button type="submit">Cadastrar</button>
