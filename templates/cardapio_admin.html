@@ -9,7 +9,7 @@
 <body>
     <h1>Cardápio de Comidas - Admin</h1>
 
-    {% for categoria in ['Esfihas', 'Entradas', 'Bebidas', 'Kebab', 'Kibe', 'Pizza', 'Combos', 'Manakish', 'Sobremesas'] %}
+    {% for categoria in ['Entradas', 'Esfihas', 'Manakish', 'Kebab', 'Kibe', 'Pizza', 'Combos', 'Bebidas', 'Sobremesas'] %}
         <h2>{{ categoria }}</h2>
         <ul>
             {% for comida in comidas %}

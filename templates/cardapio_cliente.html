@@ -8,43 +8,53 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Slabo+27px&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="barra-navegacao">
+        <!-- Links de navegação -->
+        {% for categoria in ['Entradas', 'Esfihas', 'Manakish', 'Kebab', 'Kibe', 'Pizza', 'Combos', 'Bebidas', 'Sobremesas'] %}
+            <a href="#{{ categoria }}">{{ categoria }}</a>
+        {% endfor %}
+    </div>
+
     <h1>Cardápio</h1>
 
     <div class="cardapio-container">
         <!-- Exibindo as categorias -->
-        {% for categoria in ['Esfihas', 'Entradas', 'Bebidas', 'Kebab', 'Kibe', 'Pizza', 'Combos', 'Manakish', 'Sobremesas'] %}
-            <h2>{{ categoria }}</h2>
-            <ul>
-                <!-- Exibindo os produtos da categoria -->
-                {% for comida in comidas %}
-                    {% if comida.categoria_produto == categoria %}
-                        <li class="cardapio-item">
-                            <div class="produto-info">
-                                <!-- Link para a imagem -->
-                                <a href="{{ comida.link_imagem }}" target="_blank">
-                                    <img src="{{ url_for('static', filename='img/' + (comida.imagem_produto if comida.imagem_produto else 'default.png')) }}" alt="{{ comida.nome_produto }}" class="produto-img">
-                                </a>
-                                <div class="detalhes-produto">
-                                    <!-- Nome do produto -->
-                                    <strong>{{ comida.nome_produto }}</strong>
-                                    <!-- Descrição do produto -->
-                                    <p class="descricao">{{ comida.descricao_produto }}</p>
-                                    <!-- Preço do produto -->
-                                    <span class="preco">R$ {{ comida.preco_produto }}</span>
+        {% for categoria in ['Entradas', 'Esfihas', 'Manakish', 'Kebab', 'Kibe', 'Pizza', 'Combos', 'Bebidas', 'Sobremesas'] %}
+            <!-- Seção de categoria com o id correspondente -->
+            <div id="{{ categoria }}">
+                <h2>{{ categoria }}</h2>
+                <ul>
+                    <!-- Exibindo os produtos da categoria -->
+                    {% for comida in comidas %}
+                        {% if comida.categoria_produto == categoria %}
+                            <li class="cardapio-item">
+                                <div class="produto-info">
+                                    <!-- Link para a imagem -->
+                                    <a href="{{ comida.link_imagem }}" target="_blank">
+                                        <img src="{{ url_for('static', filename='img/' + (comida.imagem_produto if comida.imagem_produto else 'default.png')) }}" alt="{{ comida.nome_produto }}" class="produto-img">
+                                    </a>
+                                    <div class="detalhes-produto">
+                                        <!-- Nome do produto -->
+                                        <strong>{{ comida.nome_produto }}</strong>
+                                        <!-- Descrição do produto -->
+                                        <p class="descricao">{{ comida.descricao_produto }}</p>
+                                        <!-- Preço do produto -->
+                                        <span class="preco">R$ {{ comida.preco_produto }}</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="status">
-                                <!-- Status de disponibilidade do produto -->
-                                {% if comida.disponivel %}
-                                    <span class="disponivel">Disponível</span>
-                                {% else %}
-                                    <span class="indisponivel">Indisponível</span>
-                                {% endif %}
-                            </div>
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
+                                <div class="status">
+                                    <!-- Status de disponibilidade do produto -->
+                                    {% if comida.disponivel %}
+                                        <span class="disponivel">Disponível</span>
+                                    {% else %}
+                                        <span class="indisponivel">Indisponível</span>
+                                    {% endif %}
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
         {% endfor %}
     </div>
     

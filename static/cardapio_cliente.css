@@ -1,146 +1,59 @@
-/* Reset de margens e preenchimentos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Estilo para a barra de navegação fixa à esquerda */
+.barra-navegacao {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding-top: 20px;
+    padding-left: 20px;
 }
 
-/* Estilo geral da página */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    padding: 30px;
+.barra-navegacao a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
 }
 
-/* Estilizando o título do cardápio */
+.barra-navegacao a:hover {
+    color: #ff9f00;
+}
+
+/* Estilo para o cardápio */
+.cardapio-container {
+    margin-left: 220px; /* Espaço para a barra de navegação */
+    padding: 20px;
+}
+
 h1 {
     text-align: center;
-    font-size: 40px;
-    color: #8b0000;
-    margin-bottom: 50px;
-    font-family: 'Slabo 27px', serif;
+    font-size: 2em;
+    margin-top: 20px;
 }
 
-/* Container para os itens do cardápio */
-.cardapio-container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-/* Estilizando a lista do cardápio */
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* Estilizando cada item do cardápio */
+/* Estilo dos produtos */
 .cardapio-item {
-    background-color: #fff;
-    margin-bottom: 25px;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease;
-    overflow: hidden;
+    margin-bottom: 20px;
 }
 
-/* Efeito de hover para os itens */
-.cardapio-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilizando a imagem do produto */
 .produto-img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 20px;
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
 }
 
-/* Detalhes do produto */
-.detalhes-produto {
-    flex: 1;
-}
-
-strong {
-    font-size: 26px;
-    color: #333;
-    margin-bottom: 12px;
-    font-weight: 500;
-}
-
-.descricao {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.preco {
-    font-size: 18px;
-    color: #8b0000;
-    font-weight: bold;
-}
-
-/* Estilizando o status de disponibilidade */
 .status {
-    text-align: right;
-    font-size: 16px;
+    font-weight: bold;
 }
 
 .disponivel {
     color: green;
-    font-weight: bold;
-    background-color: #e7f9e7;
-    padding: 5px 10px;
-    border-radius: 5px;
 }
 
 .indisponivel {
     color: red;
-    font-weight: bold;
-    background-color: #f9e7e7;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-/* Garantindo uma boa responsividade em telas menores */
-@media (max-width: 800px) {
-    .cardapio-item {
-        flex-direction: column;
-        padding: 15px;
-    }
-
-    .produto-img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .detalhes-produto {
-        margin-top: 10px;
-    }
-
-    strong {
-        font-size: 22px;
-    }
-
-    .preco {
-        font-size: 16px;
-    }
-
-    .descricao {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 600px) {
-    h1 {
-        font-size: 28px;
-    }
 }
