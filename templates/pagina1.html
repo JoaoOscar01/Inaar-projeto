@@ -12,33 +12,32 @@
         <div class="symbol"></div>
     </header>
     <nav class="navbar">
-        <button id="btn-sobre">Sobre Nós</button>
-        <button onclick="window.location.href='/contatos'">Contato</button>
-        <button onclick="window.location.href='/cardapio_cliente'">Cardápio</button>
+        <button id="btn-sobre" onclick="document.getElementById('sobre-nos').scrollIntoView({ behavior: 'smooth' });">Sobre Nós</button>
+    <button id="btn-contato" onclick="document.getElementById('contatos').scrollIntoView({ behavior: 'smooth' });">Contato</button>
+    <button onclick="window.location.href='/cardapio_cliente'">Cardápio</button>
     </nav>
     <div class="content">
         <div class="content-section">
             <h3>Sobre o INAAR</h3>
             <p>O Restaurante INAAR é um verdadeiro ícone de autenticidade e tradição da culinária árabe. Fundado com a visão de oferecer uma experiência gastronômica que transcende o paladar, o INAAR combina sabores autênticos com um ambiente acolhedor e sofisticado. Desde a sua inauguração, nosso compromisso tem sido transportar nossos clientes ao coração do Oriente Médio, proporcionando uma imersão completa em uma cultura rica e vibrante. Cada detalhe, desde a escolha dos ingredientes até a apresentação dos pratos, é pensado para refletir a essência da culinária árabe em sua forma mais pura e autêntica.</p>
             <div class="img-pair">
-                <img src="/static/img/imagem do forno.jpg" alt="Imagem sobre o INAAR">
-                <img src="/static/img/kibes de coalhada.jpg" alt="Imagem de Pratos Tradicionais">
+                <img src="/static/img/_BHS1768.jpg" alt="Imagem sobre o INAAR">
+              
             </div>
         </div>
         <div class="content-section">
             <h3>Pratos Tradicionais</h3>
             <p>Nosso menu é uma verdadeira viagem aos sabores exóticos e distintos do Oriente Médio. Cada prato é elaborado com ingredientes frescos e temperos tradicionais, importados diretamente da região para garantir a autenticidade dos sabores. Entre as especialidades, destacam-se os quibes, as esfihas, o tabule, o homus e o baba ganoush. Preparados com uma combinação de técnicas culinárias ancestrais e um toque moderno, os pratos do INAAR proporcionam uma explosão de sabores que encantam e surpreendem. Nossa dedicação à excelência se reflete em cada detalhe, desde a seleção dos ingredientes até a apresentação meticulosa dos pratos.</p>
             <div class="img-pair">
-                <img src="/static/img/imagens pastas.jpg" alt="Imagem de Pratos Tradicionais">
-                <img src="/static/img/imagem da frente.jpg" alt="Imagem de Ambiente e Hospitalidade">
+                <img src="/static/img/_BHS1902.jpg" alt="Imagem de Pratos Tradicionais">
             </div>
         </div>
         <div class="content-section">
             <h3>Experiência Culinária</h3>
             <p>No INAAR, cada refeição é uma experiência culinária inigualável. Nossos chefs são mestres na arte de harmonizar ingredientes e criar pratos que encantam tanto o paladar quanto os sentidos. A atmosfera do restaurante, cuidadosamente projetada para proporcionar conforto e elegância, complementa a qualidade excepcional dos nossos pratos. Venha desfrutar de uma refeição que celebra a rica cultura árabe, onde cada prato conta uma história de tradição e paixão pela culinária. A experiência INAAR vai além do sabor, é uma celebração dos sentidos e uma viagem cultural que deixa uma impressão duradoura.</p>
             <div class="img-pair">
-                <img src="/static/img/imagens pastas.jpg" alt="Imagem de Experiência Culinária">
-                <img src="/static/img/imagem da frente.jpg" alt="Imagem de Ambiente e Hospitalidade">
+                <img src="/static/img/_BHS1955.jpg" alt="Imagem de Experiência Culinária">
+                
             </div>
         </div>
         <div class="content-section">
@@ -74,13 +73,77 @@
             </div>
         </div>
     </div>
-    <section id="sobre-nos" class="hidden">
-        <h2>Sobre Nós</h2>
-        <p>Descrição da empresa.</p>
-    </section>
+    <footer class="footer">
+        <h2 id="contatos">Contatos</h2>
+        <ul class="contact-links">
+            <li>
+                <a href="https://www.instagram.com/inaar.cozinhalibanesa/" target="_blank">
+                    <img src="/static/img/instagram.png" alt="Instagram" class="icon"> Instagram: @inaar.cozinhalibanesa
+                </a>
+            </li>
+            <li>
+                <a href="tel:+5511981463030">
+                    <img src="/static/img/wpp.png" alt="Telefone" class="icon"> Telefone: (11) 98146-3030
+                </a>
+            </li>
+            <li>
+                <a href="mailto:contato@inaar.com">
+                    <img src="/static/img/ícone De Email PNG , ícones De E Mail, Carta Clipart, Endereço Imagem PNG e Vetor Para Download Gratuito.jpg" alt="E-mail" class="icon"> E-mail: contato@inaar.com
+                </a>
+            </li>
+            <li>
+                <a href="https://www.ifood.com.br/" target="_blank">
+                    <img src="/static/img/IFOOD LOGO (PNG) fundo transparente - BAIXAR vermelho e branco.jpg" alt="iFood" class="icon"> iFood: Inaar Comida Libanesa
+                </a>
+            </li>
+        </ul>
+        <p>&copy; 2025 Restaurante INAAR. Todos os direitos reservados.</p>
+    </footer>
+    
+    
+    
     <script src="/static/script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

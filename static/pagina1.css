@@ -1,5 +1,6 @@
+/* Corpo da página */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Fonte moderna */
     margin: 0;
     padding: 0;
     text-align: center;
@@ -7,95 +8,144 @@ body {
     color: #fff; /* Texto branco */
 }
 
+/* Cabeçalho */
 .header {
-    background-image: url('/static/img/INAAR . DIGITAL BRANDING GUIDELINES texto 2 (2)-01.png'); /* Imagem do símbolo */
-    background-size: cover; /* Ajusta o tamanho da imagem para cobrir o contêiner */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
-    background-position: center; /* Centraliza a imagem */
-    color: white; /* Cor do texto */
-    padding: 0; /* Remove o espaço extra */
-    text-align: center; /* Centraliza o texto */
-    position: relative; /* Adicionado para posicionamento */
-    height: 400px; /* Ajuste a altura do cabeçalho */
-    width: 100%;
+    background-image: url('/static/img/INAAR . DIGITAL BRANDING GUIDELINES texto 2 (2)-01.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Sombra no texto */
 }
 
+/* Navegação */
 .navbar {
     display: flex;
     justify-content: center;
-    background-color: #BC6F25;
-    padding: 10px;
+    background-color: transparent; /* Fundo transparente */
+    padding: 15px;
 }
 
 .navbar button {
     background: none;
-    border: none;
-    color: white;
+    border: 2px solid #000;
+    color: #FFA500;
     font-size: 18px;
-    margin: 0 15px;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
     cursor: pointer;
-    padding: 10px;
+    transition: all 0.3s ease;
 }
 
 .navbar button:hover {
-    background-color: #d2691e;
-    border-radius: 5px;
+    background-color: #444; /* Cinza escuro no hover */
+    border-color: #444;
+    color: #fff;
 }
 
-.hidden {
-    display: none;
-}
-
-.show {
-    display: block;
-    animation: fadeIn 1s;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.section {
-    padding: 50px;
-}
-
-/* Estilo dos títulos */
+/* Títulos */
 h3 {
-    color: #FFA500; /* Títulos em laranja */
-    font-family: 'Georgia', serif; /* Fonte charmosa e inovadora */
+    color: #fff; /* Títulos brancos para manter harmonia */
+    font-family: 'Georgia', serif;
+    margin-bottom: 10px;
 }
 
-/* Estilo das seções de conteúdo */
+/* Seções de conteúdo */
 .content-section {
-    margin: 20px;
+    margin: 30px auto;
     padding: 20px;
-    background-color: #1c1c1c; /* Fundo escuro para contraste */
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5); /* Sombra laranja para destacar */
+    background-color: #1a1a1a; /* Fundo cinza escuro mais neutro */
+    border-radius: 12px;
+    max-width: 900px; /* Foco visual */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Sombra sutil */
 }
 
-/* Estilo das imagens */
+/* Imagens */
 .content-section img {
-    width: 15%; /* Ajustei o tamanho das imagens para 15% */
+    width: 20%; /* Tamanho proporcional */
     height: auto;
-    border-radius: 8px;
+    border-radius: 10px;
     margin: 10px;
-    vertical-align: top; /* Alinhar as imagens ao topo */
-    transition: transform 0.3s ease; /* Transição suave */
+    transition: transform 0.4s ease; 
 }
 
-/* Efeito ao passar o mouse nas imagens */
 .content-section img:hover {
-    transform: scale(1.1); /* Efeito de zoom */
+    transform: scale(1.1); /* Zoom leve no hover */
 }
 
-/* Par de imagens lado a lado */
+/* Galeria */
 .img-pair {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
+    flex-wrap: wrap; /* Responsivo */
 }
+
+/* Footer estilizado */
+.footer {
+    background-color: #000; /* Fundo preto */
+    color: #fff; /* Texto branco */
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.contact-links {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Suporte a telas menores */
+}
+
+.contact-links li {
+    display: flex;
+    align-items: center;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: #ffa500; /* Cor laranja nos links */
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: #ff8c00; /* Laranja mais escuro ao passar o mouse */
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
