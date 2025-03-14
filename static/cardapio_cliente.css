@@ -5,45 +5,73 @@
     left: 0;
     width: 200px;
     height: 100%;
-    background-color: #333;
+    background-color: #000; /* Fundo preto */
     color: white;
     padding-top: 20px;
     padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Espaçamento uniforme entre os links */
+    align-items: center;
 }
 
 .barra-navegacao a {
     display: block;
-    margin-bottom: 10px;
     text-decoration: none;
-    color: white;
-    font-size: 1.2em;
+    color: #ffa500; /* Laranja */
+    font-size: 1.8em; /* Aumentado para ocupar mais espaço */
+    font-weight: bold;
+    text-align: center;
+    transition: color 0.3s ease;
+    padding: 20px 0; /* Maior espaçamento entre os links */
 }
 
 .barra-navegacao a:hover {
-    color: #ff9f00;
+    color: #ff8c00; /* Laranja mais escuro */
+}
+
+/* Estilo para o corpo da página */
+body {
+    background-color: #000; /* Fundo preto */
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 /* Estilo para o cardápio */
 .cardapio-container {
     margin-left: 220px; /* Espaço para a barra de navegação */
     padding: 20px;
+    background-color: #000; /* Fundo preto */
+    color: white;
 }
 
 h1 {
     text-align: center;
     font-size: 2em;
     margin-top: 20px;
+    color: #ffa500; /* Laranja */
 }
 
 /* Estilo dos produtos */
 .cardapio-item {
     margin-bottom: 20px;
+    background-color: #1a1a1a; /* Fundo cinza escuro */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(255, 165, 0, 0.3); /* Sombra laranja sutil */
 }
 
 .produto-img {
     width: 150px;
     height: auto;
     border-radius: 5px;
+    transition: transform 0.4s ease;
+}
+
+.produto-img:hover {
+    transform: scale(1.1);
 }
 
 .status {
@@ -51,9 +79,9 @@ h1 {
 }
 
 .disponivel {
-    color: green;
+    color: #32cd32; /* Verde limão para destaque */
 }
 
 .indisponivel {
-    color: red;
+    color: #ff4500; /* Vermelho forte */
 }
