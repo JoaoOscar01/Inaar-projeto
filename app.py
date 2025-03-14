@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.secret_key = 'secreta'  # Necessário para sessões
 
 # Configuração do banco de dados
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:castelo12@localhost/db_inaar'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://inaar_db_u15h_user:GOhmuBhb6P1Q46iaNI9UCwBdw4c6MqBd@dpg-cv9o0ctds78s73br3q30-a/inaar_db_u15h'
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
 
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:12345@localhost/db_inaar'
